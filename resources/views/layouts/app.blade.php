@@ -33,13 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @guest
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('Contactar') }}</a>
-                                </li>
-                            @endif
-                        @else
+                        @if (Auth::check())
                             <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('Agenda') }}</a>
                             </li>
@@ -49,7 +43,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('Citas') }}</a>
                             </li>
-                        @endguest
+                        @endif
                         
                     </ul>
 
