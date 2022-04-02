@@ -35,13 +35,16 @@
                     <ul class="navbar-nav me-auto">
                         @if (Auth::check())
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('Agenda') }}</a>
+                                <a class="nav-link" href="{{ route('agendas.index')}}">{{ __('Agenda') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('Veterinarios') }}</a>
+                                <a class="nav-link" href="{{ route('veterinarios.index')}}">{{ __('Veterinarios') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('Citas') }}</a>
+                                <a class="nav-link" href="{{ route('clientes.index')}}">{{ __('Clientes') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('citas.index')}}">{{ __('Citas') }}</a>
                             </li>
                         @endif
                         

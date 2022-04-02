@@ -19,4 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('veterinarios', App\Http\Controllers\VeterinarioController::class);
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
+Route::resource('agendas', App\Http\Controllers\AgendaController::class);
+Route::resource('citas', App\Http\Controllers\CitaController::class);
+
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
