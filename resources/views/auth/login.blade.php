@@ -1,7 +1,66 @@
 @extends('layouts.app')
 
+<link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+
 @section('content')
-<div class="container">
+
+    <main class="form-signin">
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <h1 class="h3 mb-3 fw-normal text-center">Bienvenido</h1>
+            <div class="form-floating">
+                
+                <input id="email" type="email" id="floatingInput" class="form-control
+                @error('email') is-invalid 
+                @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                <label for="floatingInput" >{{ __('Correo') }}</label>
+            </div>
+
+            <div class="form-floating">
+                
+                <input id="password" type="password" id="floatingPass" class="form-control 
+                @error('password') is-invalid 
+                @enderror" name="password" required autocomplete="current-password">
+                
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                <label for="floatingPass" >{{ __('Contraseña') }}</label>
+            </div>
+
+            <div class="checkbox mb-3 text-center">
+                <label>
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    {{ __('Recordar Me') }}
+                </label>
+            </div>
+
+            <button type="submit" class="w-100 btn btn-lg btn-primary">
+                {{ __('Iniciar') }}
+            </button>
+
+            @if (Route::has('password.request'))
+                <div class="mt-4 mb-3 text-center">
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{ __('Olvide la contraseña?') }}
+                    </a>
+                </div>
+            @endif
+
+        </form>
+    </main>
+
+
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -69,5 +128,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
