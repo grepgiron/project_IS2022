@@ -18,8 +18,8 @@ class Agenda extends Migration
             $table->engine='InnoDB';
             $table->bigIncrements('id');
             $table->bigInteger('id_user')->unsigned();
+            $table->string('descripcion', 100);
             $table->timestamps();
-
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }

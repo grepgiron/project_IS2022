@@ -18,7 +18,13 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="box-footer mt20 mt-4">
+        <a href="{{ route('veterinarios.index') }}" class="btn btn-outline-secondary">
+            <i class="fa fa-fw fa-list-alt"></i>
+            <span class="hidden-xs">
+                Atras
+            </span>
+        </a>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
 </div>

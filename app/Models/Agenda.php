@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $id_user
+ * @property $descripcion
  * @property $created_at
  * @property $updated_at
  *
@@ -22,6 +23,7 @@ class Agenda extends Model
     
     static $rules = [
 		'id_user' => 'required',
+        'descripcion' => 'required',
     ];
 
     protected $perPage = 20;
@@ -31,7 +33,7 @@ class Agenda extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_user'];
+    protected $fillable = ['id_user', 'descripcion'];
 
 
     /**

@@ -48,7 +48,7 @@ class AgendaController extends Controller
         $agenda = Agenda::create($request->all());
 
         return redirect()->route('agendas.index')
-            ->with('success', 'Agenda created successfully.');
+            ->with('Success', 'Agenda creada satisfactoriamente.');
     }
 
     /**
@@ -91,7 +91,7 @@ class AgendaController extends Controller
         $agenda->update($request->all());
 
         return redirect()->route('agendas.index')
-            ->with('success', 'Agenda updated successfully');
+            ->with('Success', 'Agenda actualizada satisfactoriamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class AgendaController extends Controller
         $agenda = Agenda::find($id)->delete();
 
         return redirect()->route('agendas.index')
-            ->with('success', 'Agenda deleted successfully');
+            ->with('Success', 'Agenda eliminada satisfactoriamente');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cita;
 use App\Models\Cliente;
 use App\Models\Veterinario;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 /**
@@ -47,8 +48,10 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
+    
+        
         request()->validate(Cita::$rules);
-
+        $request->request->add(['id_agenda' => auth()->user()->id]);
         $cita = Cita::create($request->all());
 
         return redirect()->route('citas.index')

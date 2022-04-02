@@ -30,10 +30,8 @@ class Cita extends Model
     static $rules = [
 		'fecha' => 'required',
 		'hora' => 'required',
-		'estado' => 'required',
 		'id_veterinario' => 'required',
 		'id_cliente' => 'required',
-		'id_agenda' => 'required',
 		'observacion' => 'required',
     ];
 

@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -12,13 +13,13 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                {{ __('Cita') }}
-                            </span>
+                            <h4 id="card_title">
+                                {{ __('Citas') }}
+                            </h4>
 
                              <div class="float-right">
                                 <a href="{{ route('citas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear') }}
                                 </a>
                               </div>
                         </div>
@@ -31,18 +32,17 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table class="table">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th scope="col">#</th>
                                         
-										<th>Fecha</th>
-										<th>Hora</th>
-										<th>Estado</th>
-										<th>Id Veterinario</th>
-										<th>Id Cliente</th>
-										<th>Id Agenda</th>
-										<th>Observacion</th>
+										<th scope="col">Fecha</th>
+										<th scope="col">Hora</th>
+										<th scope="col">Estado</th>
+										<th scope="col">Veterinario</th>
+										<th scope="col">Cliente</th>
+										<th scope="col">Agenda</th>
 
                                         <th></th>
                                     </tr>
@@ -50,17 +50,16 @@
                                 <tbody>
                                     @foreach ($citas as $cita)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <td scope="row">{{ ++$i }}</td>
                                             
 											<td>{{ $cita->fecha }}</td>
 											<td>{{ $cita->hora }}</td>
 											<td>{{ $cita->estado }}</td>
-											<td>{{ $cita->id_veterinario }}</td>
-											<td>{{ $cita->id_cliente }}</td>
-											<td>{{ $cita->id_agenda }}</td>
-											<td>{{ $cita->observacion }}</td>
+											<td>{{ $cita->veterinario->nombre }}</td>
+											<td>{{ $cita->cliente->nombre }}</td>
+											<td>{{ $cita->agenda->descripcion }}</td>
 
-                                            <td>
+                                            <td scope="row">
                                                 <form action="{{ route('citas.destroy',$cita->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('citas.show',$cita->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('citas.edit',$cita->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
@@ -80,4 +79,5 @@
             </div>
         </div>
     </div>
+</main>
 @endsection

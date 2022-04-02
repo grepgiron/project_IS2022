@@ -5,16 +5,30 @@
 @endsection
 
 @section('content')
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">Show Cliente</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('clientes.index') }}"> Back</a>
+                        <div class="row">
+                            <div class="col-auto me-auto">
+                                <h4>Datos de Cliente</h4>
+                            </div>
+                            <div class="col-auto">
+                                <a href="{{ route('clientes.index') }}" class="btn btn-secondary">
+                                    <i class="fa fa-fw fa-list-alt"></i>
+                                    <span class="hidden-xs">
+                                        Atras
+                                    </span>
+                                </a>
+                                <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-success">
+                                    <i class="fa fa-fw fa-pencil-alt"></i>
+                                    <span class="hidden-xs">
+                                        Editar
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -42,4 +56,5 @@
             </div>
         </div>
     </section>
+</main>
 @endsection
