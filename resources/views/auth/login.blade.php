@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <main class="form-signin">
+    <main class="form-signin mt-5">
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

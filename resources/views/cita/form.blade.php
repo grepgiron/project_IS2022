@@ -58,7 +58,7 @@
 
     </div>
     <div class="box-footer mt20 mt-4">
-        <a href="{{ route('citas.index') }}" class="btn btn-outline-secondary">
+        <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">
             <i class="fa fa-fw fa-list-alt"></i>
             <span class="hidden-xs">
                 Atras
