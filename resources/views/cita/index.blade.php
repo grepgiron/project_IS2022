@@ -53,8 +53,17 @@
                                             <td scope="row">{{ ++$i }}</td>
                                             
 											<td>{{ $cita->fecha }}</td>
-											<td>{{ $cita->hora }}</td>
-											<td>{{ $cita->estado }}</td>
+											<td>{{ $cita->hora }} </td>
+											<td>
+                                                @if($cita->estado == 'Activa')
+                                                    <p class="text-primary">{{ $cita->estado }}</p>
+                                                @elseif ($cita->estado == 'Cancelada')
+                                                    <p class="text-danger">{{ $cita->estado }}</p>
+                                                @else
+                                                    <p class="text-success">{{ $cita->estado }}</p>
+                                                @endif
+                                            </td>
+
 											<td>{{ $cita->veterinario->nombre }}</td>
 											<td>{{ $cita->cliente->nombre }}</td>
 											<td>{{ $cita->agenda->descripcion }}</td>
