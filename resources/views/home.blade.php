@@ -27,7 +27,7 @@
                     <div class="card-header">Finalizadas</div>
                     <div class="card-body">
                       <h5 class="card-title">Citas finalizadas {{ $complete->count() }}</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text">.</p>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <div class="card-header">Canceladas</div>
                     <div class="card-body">
                       <h5 class="card-title">Citas canceladas {{ $close->count() }}</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text">.</p>
                     </div>
                 </div>
             </div>
