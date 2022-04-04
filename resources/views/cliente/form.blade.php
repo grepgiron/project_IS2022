@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('telefono') }}
-            {{ Form::text('telefono', $cliente->telefono, ['class' => 'form-control' . ($errors->has('telefono') ? ' is-invalid' : ''), 'placeholder' => 'Telefono']) }}
+            {{ Form::number('telefono', $cliente->telefono, ['class' => 'form-control' . ($errors->has('telefono') ? ' is-invalid' : ''), 'placeholder' => 'Telefono']) }}
             {!! $errors->first('telefono', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('dni') }}
-            {{ Form::text('dni', $cliente->dni, ['class' => 'form-control' . ($errors->has('dni') ? ' is-invalid' : ''), 'placeholder' => 'Dni']) }}
+            {{ Form::number('dni', $cliente->dni, ['class' => 'form-control' . ($errors->has('dni') ? ' is-invalid' : ''), 'placeholder' => 'Dni' ]) }}
             {!! $errors->first('dni', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

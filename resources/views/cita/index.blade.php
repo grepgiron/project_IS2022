@@ -70,11 +70,13 @@
 
                                             <td scope="row">
                                                 <form action="{{ route('citas.destroy',$cita->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('citas.show',$cita->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('citas.edit',$cita->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('citas.show',$cita->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    @if ($cita->estado == 'Activa')
+                                                        <a class="btn btn-sm btn-outline-success" href="{{ route('citas.edit',$cita->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-outline-danger"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    @endif
                                                 </form>
                                             </td>
                                         </tr>

@@ -21,5 +21,7 @@ Route::resource('veterinarios', App\Http\Controllers\VeterinarioController::clas
 Route::resource('clientes', App\Http\Controllers\ClienteController::class)->middleware('auth');
 Route::resource('agendas', App\Http\Controllers\AgendaController::class)->middleware('auth');
 Route::resource('citas', App\Http\Controllers\CitaController::class)->middleware('auth');
+Route::post('/citas/{id}/cancelar', 'CitaController@cancel')->middleware('auth');
+
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

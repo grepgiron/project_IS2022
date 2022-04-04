@@ -53,6 +53,7 @@
                     <a class="btn btn-link" href="{{ route('password.request') }}">
                         {{ __('Olvide la contraseña?') }}
                     </a>
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700">Registrar</a>
                 </div>
             @endif
 

@@ -55,12 +55,12 @@
 
                                             <td scope="row">
                                                 <form action="{{ route('veterinarios.destroy',$veterinario->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('veterinarios.show',$veterinario->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('veterinarios.edit',$veterinario->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('veterinarios.show',$veterinario->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-outline-success" href="{{ route('veterinarios.edit',$veterinario->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                        Delete
+                                                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                        Eliminar
                                                     </button>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
