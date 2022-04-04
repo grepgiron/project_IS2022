@@ -16,53 +16,84 @@
                                 <h4>Datos de Cita</h4>
                             </div>
                             <div class="col-auto">
-                                <a href="{{ route('citas.index') }}" class="btn btn-secondary">
+                                <a href="{{ route('citas.index') }}" class="btn btn-sm  btn-secondary">
                                     <i class="fa fa-fw fa-list-alt"></i>
                                     <span class="hidden-xs">
                                         Atras
                                     </span>
                                 </a>
-                                <a href="{{ route('citas.edit', $cita->id) }}" class="btn btn-success">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                    <span class="hidden-xs">
-                                        Editar
-                                    </span>
-                                </a>
+                                @if ($cita->estado == 'Activa')
+                                    <a href="{{ route('citas.edit', $cita->id) }}" class="btn btn-sm btn-success">
+                                        <i class="fa fa-fw fa-pencil-alt"></i>
+                                        <span class="hidden-xs">
+                                            Editar
+                                        </span>
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+                        @if ($cita->estado == 'Cancelada')
+                            <div class="alert alert-danger">
+                                <p>Esta cita fue cancelada</p>
+                            </div>
+                        @endif
                         <div class="form-group">
                             <strong>Fecha:</strong>
-                            {{ $cita->fecha }}
+                            <div class="form-control">
+                                {{ $cita->fecha }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Hora:</strong>
-                            {{ $cita->hora }}
+                            <div class="form-control">
+                                {{ $cita->hora }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $cita->estado }}
+                            <div class="form-control">
+                                {{ $cita->estado }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Veterinario:</strong>
-                            {{ $cita->veterinario->nombre }}
+                            <div class="form-control">
+                                {{ $cita->veterinario->nombre }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Cliente:</strong>
-                            {{ $cita->cliente->nombre }}
+                            <div class="form-control">
+                                {{ $cita->cliente->nombre }}
+                            </div>
+                            
                         </div>
                         <div class="form-group">
                             <strong>Agenda:</strong>
-                            {{ $cita->agenda->descripcion }}
+                            <div class="form-control">
+                                {{ $cita->agenda->descripcion }}
+                            </div>
+                            
                         </div>
                         <div class="form-group">
                             <strong>Observacion:</strong>
-                            {{ $cita->observacion }}
+                            <div class="form-control">
+                                {{ $cita->observacion }}
+                            </div>
+                            
                         </div>
-
+                        <div class="mt-4">
+                            @if ($cita->estado == 'Activa')
+                                <form action="{{ route('citas.destroy',$cita->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-outline-danger"><i class="fa fa-fw fa-trash"></i> Cancelar Cita</button>
+                                </form>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

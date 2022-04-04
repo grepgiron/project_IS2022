@@ -13,12 +13,14 @@
                 <h4>
                     {{ __('Agenda') }}
                 </h4>
-
+                
+                @if ($agendas->count() == 0)
                     <div class="float-right">
                     <a href="{{ route('agendas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                         {{ __('Crear') }}
                     </a>
                     </div>
+                @endif
             </div>
         </div>
         @if ($message = Session::get('success'))
@@ -48,12 +50,12 @@
 
                                 <td scope="row">
                                     <form action="{{ route('agendas.destroy',$agenda->id) }}" method="POST">
-                                        <a class="btn btn-sm btn-primary " href="{{ route('agendas.show',$agenda->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                        <a class="btn btn-sm btn-success" href="{{ route('agendas.edit',$agenda->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                        <a class="btn btn-sm btn-outline-primary " href="{{ route('agendas.show',$agenda->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                        <a class="btn btn-sm btn-outline-success" href="{{ route('agendas.edit',$agenda->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            Delete
+                                        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Eliminar
                                         </button>
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

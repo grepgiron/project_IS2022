@@ -16,13 +16,13 @@
                                 <h4>Datos de Veterinario</h4>
                             </div>
                             <div class="col-auto">
-                                <a href="{{ route('veterinarios.index') }}" class="btn btn-secondary">
+                                <a href="{{ route('veterinarios.index') }}" class="btn btn-sm btn-secondary">
                                     <i class="fa fa-fw fa-list-alt"></i>
                                     <span class="hidden-xs">
                                         Atras
                                     </span>
                                 </a>
-                                <a href="{{ route('veterinarios.edit', $veterinario->id) }}" class="btn btn-success">
+                                <a href="{{ route('veterinarios.edit', $veterinario->id) }}" class="btn btn-sm btn-success">
                                     <i class="fa fa-fw fa-pencil-alt"></i>
                                     <span class="hidden-xs">
                                         Editar
@@ -36,15 +36,22 @@
                         
                         <div class="form-group">
                             <strong>Nombre:</strong>
-                            {{ $veterinario->nombre }}
+                            <div class="form-control">
+                                {{ $veterinario->nombre }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Direccion:</strong>
-                            {{ $veterinario->direccion }}
+                            <div class="form-control">
+                                {{ $veterinario->direccion }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Telefono:</strong>
-                            {{ $veterinario->telefono }}
+                            <div class="form-control">
+                                {{ $veterinario->telefono }}
+                            </div>
+                            
                         </div>
 
                     </div>

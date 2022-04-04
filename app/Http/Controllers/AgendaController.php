@@ -43,8 +43,8 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->request->add(['id_user' => auth()->user()->id]);
         request()->validate(Agenda::$rules);
-
         $agenda = Agenda::create($request->all());
 
         return redirect()->route('agendas.index')

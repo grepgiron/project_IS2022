@@ -16,13 +16,13 @@
                                 <h4>Datos de Cliente</h4>
                             </div>
                             <div class="col-auto">
-                                <a href="{{ route('clientes.index') }}" class="btn btn-secondary">
+                                <a href="{{ route('clientes.index') }}" class="btn btn-sm btn-secondary">
                                     <i class="fa fa-fw fa-list-alt"></i>
                                     <span class="hidden-xs">
                                         Atras
                                     </span>
                                 </a>
-                                <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-success">
+                                <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-sm btn-success">
                                     <i class="fa fa-fw fa-pencil-alt"></i>
                                     <span class="hidden-xs">
                                         Editar
@@ -36,19 +36,27 @@
                         
                         <div class="form-group">
                             <strong>Nombre:</strong>
-                            {{ $cliente->nombre }}
+                            <div class="form-control">
+                                {{ $cliente->nombre }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Telefono:</strong>
-                            {{ $cliente->telefono }}
+                            <div class="form-control">
+                                {{ $cliente->telefono }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Direccion:</strong>
-                            {{ $cliente->direccion }}
+                            <div class="form-control">
+                                {{ $cliente->direccion }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <strong>Dni:</strong>
-                            {{ $cliente->dni }}
+                            <div class="form-control">
+                                {{ $cliente->dni }}
+                            </div>
                         </div>
 
                     </div>

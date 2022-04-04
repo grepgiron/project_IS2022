@@ -16,13 +16,13 @@
                                 <h4>{{ $agenda->name ?? 'Datos de Agenda' }}</h4>
                             </div>
                             <div class="col-auto">
-                                <a href="{{ route('agendas.index') }}" class="btn btn-secondary">
+                                <a href="{{ route('agendas.index') }}" class="btn btn-sm btn-secondary">
                                     <i class="fa fa-fw fa-list-alt"></i>
                                     <span class="hidden-xs">
                                         {{ $agenda->name ?? 'Atras' }}
                                     </span>
                                 </a>
-                                <a href="{{ route('agendas.edit', $agenda->id) }}" class="btn btn-success">
+                                <a href="{{ route('agendas.edit', $agenda->id) }}" class="btn btn-sm btn-success">
                                     <i class="fa fa-fw fa-pencil-alt"></i>
                                     <span class="hidden-xs">
                                         Editar
@@ -35,7 +35,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name"><strong>Detalle :</strong></label>
-                            <div>{{ $agenda->descripcion }}</div>
+                            <div class="form-control">{{ $agenda->descripcion }}</div>
 
                     </div>
                 </div>

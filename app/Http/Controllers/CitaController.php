@@ -6,6 +6,7 @@ use App\Models\Cita;
 use App\Models\Cliente;
 use App\Models\Veterinario;
 use App\Models\User;
+use App\Models\Agenda;
 use Illuminate\Http\Request;
 
 /**
@@ -49,9 +50,10 @@ class CitaController extends Controller
     public function store(Request $request)
     {
     
-        
+        $agenda = Agenda::where('id_user', '=', auth()->user()->id)->first();
+        $request->request->add(['id_agenda' => $agenda->id]);
         request()->validate(Cita::$rules);
-        $request->request->add(['id_agenda' => auth()->user()->id]);
+        // $request->request->add(['id_agenda' => getUserAgenda()]);
         $cita = Cita::create($request->all());
 
         return redirect()->route('citas.index')
@@ -109,7 +111,7 @@ class CitaController extends Controller
      */
     public function destroy($id)
     {
-        $cita = Cita::find($id)->delete();
+        $cita = Cita::find($id)->update(['estado' => 'Cancelada']);
 
         return redirect()->route('citas.index')
             ->with('success', 'Cita deleted successfully');
