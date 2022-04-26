@@ -13,7 +13,7 @@
                 @if ($clientes->count() ==  0 || $veterinarios->count() == 0)
                     <div class="alert alert-info" role="alert">
                         <h4 class="alert-heading">Registros previos!</h4>
-                        <p>Para continuar el registro de citas te invitamos a registrar tus veterinarios y clientes, ya que son importantes para continuar el registro.
+                        <p>Para continuar el registro de citas te invitamos a registrar tus empleados y clientes, ya que son importantes para continuar el registro.
                         </p>
                         <hr>
                         @if ($clientes->count() == 0)

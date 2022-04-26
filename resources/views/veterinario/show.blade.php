@@ -13,7 +13,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-auto me-auto">
-                                <h4>Datos de Veterinario</h4>
+                                <h4>Datos de Empleado</h4>
                             </div>
                             <div class="col-auto">
                                 <a href="{{ route('veterinarios.index') }}" class="btn btn-sm btn-secondary">

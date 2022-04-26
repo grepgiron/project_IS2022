@@ -84,7 +84,7 @@
                     <thead class="thead-dark">
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Veterinario</th>
+                        <th scope="col">Empleados</th>
                         <th scope="col">Cliente</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Fecha</th>
